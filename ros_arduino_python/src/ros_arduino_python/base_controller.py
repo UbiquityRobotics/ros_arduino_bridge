@@ -227,6 +227,8 @@ class BaseController:
         x = req.linear.x         # m/s
         th = req.angular.z       # rad/s
 
+        rospy.loginfo("CmdVel: x={0}m/s th={1}deg/s".format(x, th * 180.0/pi))
+
         if x == 0:
             # Turn in place
             right = th * self.wheel_track  * self.gear_reduction / 2.0

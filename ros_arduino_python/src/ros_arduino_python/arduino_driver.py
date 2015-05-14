@@ -28,6 +28,7 @@ import time
 import sys, traceback
 from serial.serialutil import SerialException
 from serial import Serial
+import rospy
 
 SERVO_MAX = 180
 SERVO_MIN = 0
@@ -227,6 +228,7 @@ class Arduino:
     def execute_ack(self, cmd):
         ''' Thread safe execution of "cmd" on the Arduino returning True if response is ACK.
         '''
+        rospy.loginfo("Send command '{0}' to arduino".format(cmd))
         self.mutex.acquire()
         
         try:
