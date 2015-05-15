@@ -1,0 +1,58 @@
+# For a direct USB cable connection, the port name is typically
+# /dev/ttyACM# where is # is a number such as 0, 1, 2, etc
+# For a wireless connection like XBee, the port is typically
+# /dev/ttyUSB# where # is a number such as 0, 1, 2, etc.
+
+# Ubuntu on RaspPi 2.  This is normal serial port
+# Default ArduinoBridge is 57600 baud but Ubiquity uses 115200
+port: /dev/ttyAMA0
+baud: 115200
+timeout: 0.1
+
+rate: 50
+sensorstate_rate: 10
+
+use_base_controller: True
+base_controller_rate: 10
+# Maximum number of seconds after last cmd_vel received before motors are turned off:
+base_controller_timeout: 1.0
+
+# For a robot that uses base_footprint, change base_frame to base_footprint
+base_frame: base_link
+
+# === Robot drivetrain parameters
+# Freya:  WDia 0.068  WTrk 0.28  Mj: Im guessing a lot of this
+wheel_diameter: 0.0666
+wheel_track: 0.285
+encoder_resolution: 200 # 50 slots * 4
+gear_reduction: 1.0
+motors_reversed: False
+left_motor_reversed: True
+right_motor_reversed: False
+
+# === PID parameters
+Kp: 10
+Kd: 12
+Ki: 0
+Ko: 50
+accel_limit: 1.0
+
+# === Sensor definitions.  Examples only - edit for your robot.
+#     Sensor type can be one of the follow (case sensitive!):
+#	  * Ping
+#	  * GP2D12
+#	  * Analog
+#	  * Digital
+#	  * PololuMotorCurrent
+#	  * PhidgetsVoltage
+#	  * PhidgetsCurrent (20 Amp, DC)
+
+
+
+sensors: {
+  motor_current_left:   {pin: 0, type: PololuMotorCurrent, rate: 5},
+  motor_current_right:  {pin: 1, type: PololuMotorCurrent, rate: 5},
+  #ir_front_center:      {pin: 2, type: GP2D12, rate: 10},
+  #sonar_front_center:   {pin: 5, type: Ping, rate: 10},
+  arduino_led:          {pin: 13, type: Digital, rate: 5, direction: output}
+}
