@@ -20,12 +20,13 @@ base_frame: base_link
 
 # === Robot drivetrain parameters
 # Freya:  WDia 0.068  WTrk 0.28  Mj: Im guessing a lot of this
+# Loki: WDia 0.0666   WTrk 0.200
 wheel_diameter: 0.0666
-wheel_track: 0.285
-encoder_resolution: 200 # 50 slots * 4 = 200
+wheel_track: 0.200
+encoder_resolution: 64 # 16 slots * 4 = 64
 gear_reduction: 1.0
-motors_reversed: True
-left_motor_reversed: True
+motors_reversed: False
+left_motor_reversed: False
 right_motor_reversed: False
 
 # === PID parameters
@@ -52,5 +53,8 @@ sensors: {
   #motor_current_right:  {pin: 1, type: PololuMotorCurrent, rate: 5},
   #ir_front_center:      {pin: 2, type: GP2D12, rate: 10},
   #sonar_front_center:   {pin: 5, type: Ping, rate: 10},
-  #arduino_led:          {pin: 13, type: Digital, rate: 5, direction: output}
+  #arduino_led:          {pin: 13, type: Digital, rate: 5, direction: output},
+  sonar1:                {pin: 1, type: Ping, rate: 5},
+  sonar2:                {pin: 2, type: Ping, rate: 5},
+  sonar8:                {pin: 8, type: Ping, rate: 5}
 }
