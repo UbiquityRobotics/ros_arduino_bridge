@@ -161,7 +161,7 @@ class RangeSensor(Sensor):
         self.message_type = MessageType.RANGE
         
         self.msg = Range()
-        self.msg.header.frame_id = self.frame_id
+        self.msg.header.frame_id = kwargs.pop('frame_id', self.frame_id)
         
         self.pub = rospy.Publisher("~sensor/" + self.name, Range, queue_size=5)
         
@@ -183,12 +183,12 @@ class IRSensor(RangeSensor):
         self.msg.radiation_type = Range.INFRARED
         
 class Ping(SonarSensor):
-    def __init__(self,*args, **kwargs):
+    def __init__(self, *args, **kwargs):
         super(Ping, self).__init__(*args, **kwargs)
                 
-        self.msg.field_of_view = 0.785398163
-        self.msg.min_range = 0.02
-        self.msg.max_range = 3.0
+        self.msg.field_of_view = kwargs.pop('field_of_view', 0.785398163)
+        self.msg.min_range = kwargs.pop('min_range', 0.02)
+        self.msg.max_range = kwargs.pop('max_range', 3.0)
         
     def read_value(self):
         # The Arduino Ping code returns the distance in centimeters

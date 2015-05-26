@@ -158,6 +158,8 @@ class Arduino:
     def execute(self, cmd):
         ''' Thread safe execution of "cmd" on the Arduino returning a single integer value.
         '''
+        rospy.loginfo("Send command '{0}' to arduino".format(cmd))
+
         self.mutex.acquire()
         
         try:

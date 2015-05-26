@@ -98,13 +98,18 @@ class ArduinoROS():
         
         for name, params in sensor_params.iteritems():
             # Set the direction to input if not specified
+            params = params.copy()
             try:
                 params['direction']
             except:
                 params['direction'] = 'input'
+            frame_id = params.pop('frame_id', self.base_frame)
+            
                 
             if params['type'] == "Ping":
-                sensor = Ping(self.controller, name, params['pin'], params['rate'], self.base_frame)
+                sensor = Ping(self.controller, name, params['pin'], params['rate'], frame_id,
+                  direction=params.pop('direction'), field_of_view=params.pop('field_of_view', 0.785398163),
+                  min_range=params.pop('min_range', 0.02), max_range=params.pop('max_range', 3.0))
             elif params['type'] == "GP2D12":
                 sensor = GP2D12(self.controller, name, params['pin'], params['rate'], self.base_frame)
             elif params['type'] == 'Digital':
