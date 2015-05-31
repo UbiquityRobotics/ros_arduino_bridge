@@ -53,23 +53,22 @@ accel_limit: 1.0
 #	  * PhidgetsVoltage
 #	  * PhidgetsCurrent (20 Amp, DC)
 
-
-
 sensors: {
-  sonar_1:  {pin: 1, type: Ping, rate: 5, field_of_view: .43632347}, # FOV=25 degrees
-  sonar_2:  {pin: 2, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_3:  {pin: 3, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_4:  {pin: 4, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_5:  {pin: 5, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_6:  {pin: 6, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_7:  {pin: 7, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_8:  {pin: 8, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_9:  {pin: 9, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_10: {pin: 10, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_11: {pin: 11, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_12: {pin: 12, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_13: {pin: 13, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_14: {pin: 14, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_15: {pin: 15, type: Ping, rate: 5, field_of_view: .43632347},
-  sonar_16: {pin: 16, type: Ping, rate: 5, field_of_view: .43632347}
+  sonar_1:  {pin: 1,  type: Ping, rate: 5, frame_id: sonar_1,  field_of_view: .43632347}, # FOV=25 degrees
+  sonar_2:  {pin: 2,  type: Ping, rate: 5, frame_id: sonar_2,  field_of_view: .43632347},
+  sonar_3:  {pin: 3,  type: Ping, rate: 5, frame_id: sonar_3,  field_of_view: .43632347},
+  sonar_4:  {pin: 4,  type: Ping, rate: 5, frame_id: sonar_4,  field_of_view: .43632347},
+  sonar_5:  {pin: 5,  type: Ping, rate: 5, frame_id: sonar_5,  field_of_view: .43632347},
+  sonar_6:  {pin: 6,  type: Ping, rate: 5, frame_id: sonar_6,  field_of_view: .43632347},
+  sonar_7:  {pin: 7,  type: Ping, rate: 5, frame_id: sonar_7,  field_of_view: .43632347},
+  sonar_8:  {pin: 8,  type: Ping, rate: 5, frame_id: sonar_8,  field_of_view: .43632347},
+  sonar_9:  {pin: 9,  type: Ping, rate: 5, frame_id: sonar_9,  field_of_view: .43632347},
+  sonar_10: {pin: 10, type: Ping, rate: 5, frame_id: sonar_10, field_of_view: .43632347},
+  sonar_11: {pin: 11, type: Ping, rate: 5, frame_id: sonar_11, field_of_view: .43632347},
+  sonar_12: {pin: 12, type: Ping, rate: 5, frame_id: sonar_12, field_of_view: .43632347},
+  sonar_13: {pin: 13, type: Ping, rate: 5, frame_id: sonar_13, field_of_view: .43632347},
+  sonar_14: {pin: 14, type: Ping, rate: 5, frame_id: sonar_14, field_of_view: .43632347},
+  sonar_15: {pin: 15, type: Ping, rate: 5, frame_id: sonar_15, field_of_view: .43632347},
+  sonar_16: {pin: 16, type: Ping, rate: 5, frame_id: sonar_16, field_of_view: .43632347}
 }
+
