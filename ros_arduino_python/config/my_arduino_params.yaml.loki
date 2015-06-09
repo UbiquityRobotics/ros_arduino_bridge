@@ -20,12 +20,12 @@ base_frame: base_link
 
 # === Robot drivetrain parameters
 # Freya:  WDia 0.068  WTrk 0.28  motors reversed False left mot rev True,  right mot rev False  enc res 200
-# Loki:   WDia 0.060  WTrk 0.132 motors reversed False left mot rev False, right mot rev False  enc res 3000
+# Loki:   WDia 0.060  WTrk 0.132 motors reversed False left mot rev False, right mot rev False  enc res 3560
 wheel_diameter: 0.060
 wheel_track: 0.132
-encoder_resolution:   3000   # LokiHallSmallMotors: 3000  
+encoder_resolution: 3560
 gear_reduction: 1.0
-motors_reversed: True
+motors_reversed: False
 left_motor_reversed: True
 right_motor_reversed: False
 
