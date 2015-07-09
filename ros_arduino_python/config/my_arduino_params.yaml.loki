@@ -64,7 +64,7 @@ sensors: {
   sonar_10: {pin: 10, type: Ping, rate: 2, frame_id: sonar_10, field_of_view: .43632347},
   sonar_11: {pin: 11, type: Ping, rate: 2, frame_id: sonar_11, field_of_view: .43632347},
 #  sonar_12: {pin: 12, type: Ping, rate: 2, frame_id: sonar_12, field_of_view: .43632347},
-  sonar_13: {pin: 13, type: Ping, rate: 2, frame_id: sonar_13, field_of_view: .43632347}
+  sonar_13: {pin: 13, type: Ping, rate: 2, frame_id: sonar_13, field_of_view: .43632347},
   sonar_14: {pin: 14, type: Ping, rate: 2, frame_id: sonar_14, field_of_view: .43632347},
   sonar_15: {pin: 15, type: Ping, rate: 2, frame_id: sonar_15, field_of_view: .43632347},
   sonar_16: {pin: 16, type: Ping, rate: 2, frame_id: sonar_16, field_of_view: .43632347}

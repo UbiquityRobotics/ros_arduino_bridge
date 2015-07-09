@@ -49,25 +49,38 @@ accel_limit: 1.0
 
 
 
+# The sonars a cabled sonar 5 on the right and and sonar 0 on the left:
+#    remap[0] = 5
+#    remap[1] = 6
+#    remap[2] = 7
+#    remap[3] = 8
+#    remap[4] = 9
+#    remap[5] = 4
+#    remap[5] = 3
+#    remap[5] = 2
+#    remap[5] = 1
+#    remap[5] = 0
+#
+
 sensors:  {
- sonar_0:  {pin: 0,  type: Ping, rate: 2, frame_id: sonar_0,  field_of_view: .4326},
- sonar_1:  {pin: 1,  type: Ping, rate: 2, frame_id: sonar_1,  field_of_view: .4326},
- sonar_2:  {pin: 2,  type: Ping, rate: 2, frame_id: sonar_2,  field_of_view: .4326},
- sonar_3:  {pin: 3,  type: Ping, rate: 2, frame_id: sonar_3,  field_of_view: .4326},
- sonar_4:  {pin: 4,  type: Ping, rate: 2, frame_id: sonar_4,  field_of_view: .4326},
- sonar_5:  {pin: 5,  type: Ping, rate: 2, frame_id: sonar_5,  field_of_view: .4326},
- sonar_6:  {pin: 6,  type: Ping, rate: 2, frame_id: sonar_6,  field_of_view: .4326},
- sonar_7:  {pin: 7,  type: Ping, rate: 2, frame_id: sonar_7,  field_of_view: .4326},
- sonar_8:  {pin: 8,  type: Ping, rate: 2, frame_id: sonar_8,  field_of_view: .4326},
- sonar_9:  {pin: 9,  type: Ping, rate: 2, frame_id: sonar_9,  field_of_view: .4326},
- sonar_10: {pin: 10, type: Ping, rate: 2, frame_id: sonar_10, field_of_view: .4326},
- sonar_11: {pin: 11, type: Ping, rate: 2, frame_id: sonar_11, field_of_view: .4326},
- sonar_12: {pin: 12, type: Ping, rate: 2, frame_id: sonar_12, field_of_view: .4326},
- sonar_13: {pin: 13, type: Ping, rate: 2, frame_id: sonar_13, field_of_view: .4326},
- sonar_14: {pin: 14, type: Ping, rate: 2, frame_id: sonar_14, field_of_view: .4326},
- sonar_15: {pin: 15, type: Ping, rate: 2, frame_id: sonar_15, field_of_view: .4326},
- sonar_16: {pin: 16, type: Ping, rate: 2, frame_id: sonar_16, field_of_view: .4326},
- sonar_17: {pin: 17, type: Ping, rate: 2, frame_id: sonar_17, field_of_view: .4326},
- sonar_18: {pin: 18, type: Ping, rate: 2, frame_id: sonar_18, field_of_view: .4326},
- sonar_19: {pin: 19, type: Ping, rate: 2, frame_id: sonar_19, field_of_view: .4326}
+ sonar_0:  {pin: 5,  type: Ping, rate: 4, frame_id: sonar_0,  field_of_view: .4326},
+ sonar_1:  {pin: 6,  type: Ping, rate: 4, frame_id: sonar_1,  field_of_view: .4326},
+ sonar_2:  {pin: 7,  type: Ping, rate: 4, frame_id: sonar_2,  field_of_view: .4326},
+ sonar_3:  {pin: 8,  type: Ping, rate: 4, frame_id: sonar_3,  field_of_view: .4326},
+ sonar_4:  {pin: 9,  type: Ping, rate: 4, frame_id: sonar_4,  field_of_view: .4326},
+ sonar_5:  {pin: 4,  type: Ping, rate: 4, frame_id: sonar_5,  field_of_view: .4326},
+ sonar_6:  {pin: 3,  type: Ping, rate: 4, frame_id: sonar_6,  field_of_view: .4326},
+ sonar_7:  {pin: 2,  type: Ping, rate: 4, frame_id: sonar_7,  field_of_view: .4326},
+ sonar_8:  {pin: 1,  type: Ping, rate: 4, frame_id: sonar_8,  field_of_view: .4326},
+ sonar_9:  {pin: 0,  type: Ping, rate: 4, frame_id: sonar_9,  field_of_view: .4326},
+ sonar_10: {pin: 15, type: Ping, rate: 4, frame_id: sonar_10, field_of_view: .4326},
+ sonar_11: {pin: 16, type: Ping, rate: 4, frame_id: sonar_11, field_of_view: .4326},
+ sonar_12: {pin: 17, type: Ping, rate: 4, frame_id: sonar_12, field_of_view: .4326},
+ sonar_13: {pin: 18, type: Ping, rate: 4, frame_id: sonar_13, field_of_view: .4326},
+ sonar_14: {pin: 19, type: Ping, rate: 4, frame_id: sonar_14, field_of_view: .4326},
+ sonar_15: {pin: 14, type: Ping, rate: 4, frame_id: sonar_15, field_of_view: .4326},
+ sonar_16: {pin: 13, type: Ping, rate: 4, frame_id: sonar_16, field_of_view: .4326},
+ sonar_17: {pin: 12, type: Ping, rate: 4, frame_id: sonar_17, field_of_view: .4326},
+ sonar_18: {pin: 11, type: Ping, rate: 4, frame_id: sonar_18, field_of_view: .4326},
+ sonar_19: {pin: 10, type: Ping, rate: 4, frame_id: sonar_19, field_of_view: .4326}
 }
