@@ -44,9 +44,10 @@ class BaseController:
         pid_params['encoder_resolution'] = rospy.get_param("~encoder_resolution", "") 
         pid_params['gear_reduction'] = rospy.get_param("~gear_reduction", 1.0)
         pid_params['Kp'] = rospy.get_param("~Kp", 20)
-        pid_params['Kd'] = rospy.get_param("~Kd", 12)
-        pid_params['Ki'] = rospy.get_param("~Ki", 0)
-        pid_params['Ko'] = rospy.get_param("~Ko", 50)
+        pid_params['Kd'] = rospy.get_param("~Kd", 3)
+        pid_params['Ki'] = rospy.get_param("~Ki", 86)
+        pid_params['Ko'] = rospy.get_param("~Ko", 300)
+        pid_params['Ci'] = rospy.get_param("~Ci", 100)
         
         self.accel_limit = rospy.get_param('~accel_limit', 0.1)
         self.motors_reversed = rospy.get_param("~motors_reversed", False)
@@ -116,8 +117,9 @@ class BaseController:
         self.Kd = pid_params['Kd']
         self.Ki = pid_params['Ki']
         self.Ko = pid_params['Ko']
+        self.Ci = pid_params['Ci']
         
-        self.arduino.update_pid(self.Kp, self.Kd, self.Ki, self.Ko)
+        self.arduino.update_pid(self.Kp, self.Kd, self.Ki, self.Ko, self.Ci)
 
     def poll(self):
         now = rospy.Time.now()

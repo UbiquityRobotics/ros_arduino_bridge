@@ -261,11 +261,11 @@ class Arduino:
         self.mutex.release()
         return ack == 'OK'   
     
-    def update_pid(self, Kp, Kd, Ki, Ko):
+    def update_pid(self, Kp, Kd, Ki, Ko, Ci):
         ''' Set the PID parameters on the Arduino
         '''
         print "Updating PID parameters"
-        cmd = 'u ' + str(Kp) + ':' + str(Kd) + ':' + str(Ki) + ':' + str(Ko)
+        cmd = 'u ' + str(Kp) + ':' + str(Kd) + ':' + str(Ki) + ':' + str(Ko) + ':' + str(Ci)
         self.execute_ack(cmd)                          
 
     def get_baud(self):
