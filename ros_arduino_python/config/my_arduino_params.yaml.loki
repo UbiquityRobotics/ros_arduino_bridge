@@ -28,12 +28,11 @@ left_motor_reversed: False
 right_motor_reversed: True
 
 # === PID parameters
-# Tuned for chinese 298:1 motors with 3000 pulse per wheel rotation
-# For speeds below 0.15 meter/sec the ride is not smooth but distance is good
-Kp: 70
+# 7-9-2015:  Tuned for Pololu 298:1 motors with 3600 pulse per wheel encoders
+Kp: 20
 Kd: 3 
-Ki: 500
-Ko: 100
+Ki: 86
+Ko: 300
 #Kp: 0
 #Kd: 0
 #Ki: 0
