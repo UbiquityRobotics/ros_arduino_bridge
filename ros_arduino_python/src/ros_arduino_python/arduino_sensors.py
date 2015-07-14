@@ -192,11 +192,13 @@ class Ping(SonarSensor):
         
     def read_value(self):
         # The Arduino Ping code returns the distance in centimeters
-        cm = self.controller.ping(self.pin)
+        mm = self.controller.ping(self.pin)
         
         # Convert it to meters for ROS
-        distance = cm / 100.0
-        
+        distance = mm / 1000.0
+
+	if distance > 3.0:
+	    distance = 3.0
         return distance
     
         

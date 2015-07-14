@@ -158,7 +158,7 @@ class Arduino:
     def execute(self, cmd):
         ''' Thread safe execution of "cmd" on the Arduino returning a single integer value.
         '''
-        rospy.loginfo("Send command '{0}' to arduino".format(cmd))
+        #rospy.loginfo("Send command '{0}' to arduino".format(cmd))
 
         self.mutex.acquire()
         
@@ -179,15 +179,26 @@ class Arduino:
                     self.port.write(cmd + '\r')
                     value = self.recv(self.timeout)
                 except:
+		    rospy.loginfo("Command '{0}' triggered exception".
+		      format(cmd))
                     print "Exception executing command: " + cmd
                 attempts += 1
         except:
             self.mutex.release()
+	    rospy.loginfo("Command '{0}' triggered exception".format(cmd))
             print "Exception executing command: " + cmd
             value = None
         
         self.mutex.release()
-        return int(value)
+
+	try:
+	    value = int(value)
+	    rospy.loginfo("Command '{0}' returned {1}".format(cmd, value))
+	except:
+	    rospy.loginfo("Command '{0}' got '{1}' instead of integer".
+	      format(cmd, value))
+            value = 0
+        return value
 
     def execute_array(self, cmd):
         ''' Thread safe execution of "cmd" on the Arduino returning an array.
