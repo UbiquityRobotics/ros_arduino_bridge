@@ -184,10 +184,15 @@ class BaseController:
             odom.pose.pose.position.y = self.y
             odom.pose.pose.position.z = 0
             odom.pose.pose.orientation = quaternion
+            odom.pose.covariance = [0.2,  0,    0,     0,     0,     0,
+                                    0,    0.2,  0,     0,     0,     0,
+                                    0,    0,    0.2,   0,     0,     0,
+                                    0,    0,    0,     0.2,   0,     0,
+                                    0,    0,    0,     0,     0.2,   0,
+                                    0,    0,    0,     0,     0,     0.2]
             odom.twist.twist.linear.x = vxy
             odom.twist.twist.linear.y = 0
             odom.twist.twist.angular.z = vth
-
             self.odomPub.publish(odom)
             
             if now > (self.last_cmd_vel + rospy.Duration(self.timeout)):
