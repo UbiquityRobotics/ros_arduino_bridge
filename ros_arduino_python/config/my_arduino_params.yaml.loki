@@ -24,9 +24,9 @@ wheel_diameter: 0.060
 wheel_track: 0.132
 encoder_resolution: 3560
 gear_reduction: 1.0
-motors_reversed: True
+motors_reversed: False
 left_motor_reversed: False
-right_motor_reversed: True
+right_motor_reversed: False
 
 # === PID parameters
 # 7-9-2015:  Tuned for Pololu 298:1 motors with 3600 pulse per wheel encoders
