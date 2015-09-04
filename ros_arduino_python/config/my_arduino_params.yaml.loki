@@ -30,9 +30,9 @@ right_motor_reversed: False
 
 # === PID parameters
 # 7-9-2015:  Tuned for Pololu 298:1 motors with 3600 pulse per wheel encoders
-Kp: 20
-Kd: 3
-Ki: 86
+Kp: 80
+Kd: 10 
+Ki: 200
 Ko: 300
 Ci: 100
 #Kp: 0
