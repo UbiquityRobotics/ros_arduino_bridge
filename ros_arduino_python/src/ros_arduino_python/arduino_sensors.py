@@ -23,6 +23,7 @@ import roslib; roslib.load_manifest('ros_arduino_python')
 import rospy
 from sensor_msgs.msg import Range
 from ros_arduino_msgs.msg import *
+from arduino_node import Arduino
 
 LOW = 0
 HIGH = 1
@@ -78,6 +79,41 @@ class Sensor(object):
             
             self.t_next = now + self.t_delta
     
+class Sensors_Queue(Sensor):
+    def __init__(self, *args, **kwargs):
+        super(Sensors_Queue, self).__init__(*args, **kwargs)
+                
+        #self.controller = controller
+        #self.name = name
+        #self.rate = rate
+        #self.frame_id = frame_id
+        #self.sensor_params = sensor_params
+
+        #self.msg.field_of_view = kwargs.pop('field_of_view', 0.785398163)
+        #self.msg.min_range = kwargs.pop('min_range', 0.02)
+        #self.msg.max_range = kwargs.pop('max_range', 3.0)
+
+        # Verify argument types:
+        #assert isinstance(controller, Arduino)
+        #assert isinstance(name, str)
+        #assert isinstance(rate, int) or isinstance(rate, float)
+        #assert isinstance(frame_id, str)
+        #assert isinstance(sensor_params, dict)
+
+        for name, params in sensor_params.iteritems():
+            params = params.copy()
+            if params['type'] == 'Ping':
+                id = params['id']
+                frame_id = params['frame_id']
+                field_of_view = params['field_of_view']
+                min_range = params.pop('min_range', 0.02)
+                max_range = params.pop('max_range', 3.0)
+                Ping
+            elif params['type'] == 'Encoder':
+                pass
+            else:
+                assert False, 'Unrecognized Sensors_Queue sensor "{0}"'.format(params['type'])
+
 class AnalogSensor(Sensor):
     def __init__(self, *args, **kwargs):
         super(AnalogSensor, self).__init__(*args, **kwargs)

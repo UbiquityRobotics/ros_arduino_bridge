@@ -82,6 +82,7 @@ class ArduinoROS():
 
 	# Initialize the controlller
         self.controller = Arduino(self.port, self.baud, self.timeout)
+        assert isinstance(self.controller, Arduino)
         
         # Make the connection
         self.controller.connect()
@@ -106,8 +107,11 @@ class ArduinoROS():
             frame_id = params.pop('frame_id', self.base_frame)
             
                 
-            if params['type'] == "Ping":
-                sensor = Ping(self.controller, name, params['pin'], params['rate'], frame_id,
+            if params['type'] == "Sensors_Queue":
+                assert isinstance(self.controller, Arduino)
+                sensor = Sensors_Queue(self.controller, name, params['rate'], frame_id, params['sensors'])
+            elif params['type'] == "Ping":
+                sensor = Ping(self.controller, name, params['pin'], params['rate'], frame_id, 
                   direction=params.pop('direction'), field_of_view=params.pop('field_of_view', 0.785398163),
                   min_range=params.pop('min_range', 0.02), max_range=params.pop('max_range', 3.0))
             elif params['type'] == "GP2D12":
